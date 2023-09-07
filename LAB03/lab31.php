@@ -6,7 +6,7 @@
     $volumen = ($PI * $radio * $radio * $altura);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Template con PHP en Laboratorio #19">
