@@ -13,5 +13,6 @@ ________________________________________________________________________________
 ### 04. LAB02 - Laboratorio #2 - Aplicaciones Básicas en PHP [Parte II].
 ### 05. LAB03 - Laboratorio #3 - Procesamiento de formularios en PHP.
 ### 06. LAB04 - Laboratorio #4 - Aplicaciones que procesen formularios en PHP.
+### 07. LAB05 - Laboratorio #5 - Adjuntar archivos a servidores web con formularios en PHP.
 
 ------------------------------------------------------------------------------------
