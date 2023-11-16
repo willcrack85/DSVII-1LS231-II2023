@@ -1,0 +1,37 @@
+*/--------------------------------------------------------------------------------------------------------------------/*
+CREAR TABLA DE VOTOS                               |
+----------------------------------------------------
+CREATE TABLE votos ( id tinyint(3) unsigned NOT NULL AUTO_INCREMENT, votos1 int(10) unsigned NOT NULL DEFAULT '0', votos2 int(10) unsigned NOT NULL DEFAULT '0', PRIMARY KEY (id) );
+
+CREATE TABLE votos (
+    id tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+    votos1 int(10) unsigned NOT NULL DEFAULT '0',
+    votos2 int(10) unsigned NOT NULL DEFAULT '0',
+    PRIMARY KEY (id)
+);
+*/--------------------------------------------------------------------------------------------------------------------/*
+INSERTAR DATOS EN LA TABLA DE VOTOS                |
+----------------------------------------------------
+INSERT INTO votos VALUES (1, 49, 12);
+*/--------------------------------------------------------------------------------------------------------------------/*
+CREAR PROCEDIMIENTO PARA VISTA DE VOTOS            |
+----------------------------------------------------
+CREATE DEFINER=`willcrackcorp`@`localhost` PROCEDURE `sp_listar_votos`() BEGIN SELECT votos1, votos2 FROM votos; END;
+
+CREATE DEFINER=`willcrackcorp`@`localhost` PROCEDURE `sp_listar_votos`()
+BEGIN
+	SELECT votos1, votos2 FROM votos;
+END;
+*/--------------------------------------------------------------------------------------------------------------------/*
+CREAR PROCEDIMIENTO PARA ACTUALIZAR TABLA DE VOTOS |
+----------------------------------------------------
+CREATE DEFINER=`willcrackcorp`@`localhost` PROCEDURE `sp_actualizar_votos`(IN param_votos1 varchar(255), IN param_votos2 varchar(255)) BEGIN SET @s = CONCAT("UPDATE votos SET votos1=",param_votos1,", votos2=",param_votos2); PREPARE stmt FROM @s; EXECUTE stmt; DEALLOCATE PREPARE stmt; END;
+
+CREATE DEFINER=`willcrackcorp`@`localhost` PROCEDURE `sp_actualizar_votos`(IN param_votos1 varchar(255), IN param_votos2 varchar(255)) 
+BEGIN
+	SET @s = CONCAT("UPDATE votos SET votos1=",param_votos1,", votos2=",param_votos2);
+    PREPARE stmt FROM @s;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;
+END;
+*/--------------------------------------------------------------------------------------------------------------------/*
