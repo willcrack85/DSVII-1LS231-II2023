@@ -1,0 +1,120 @@
+/** Globals */
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+/** Links */
+h1 {
+    font-weight: bold;
+    color: rgba(0, 102, 204, 0.883);
+}
+
+h2 {
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+h3 {
+    font-size: 10pt;
+    font-weight: bold;
+    color: black;
+}
+
+h5 {
+    padding: 1.5em;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    border: 0.05rem solid #fff;
+}
+
+/** Base structure */
+html,
+body {
+    background: #333 url(../img/fondo.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+body {
+    padding-top: 3.5rem;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+
+.jumbotron {
+    background-color: #efddbf;
+    border: 0.5rex solid white;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0rem;
+    padding: 1rem 1rem;
+}
+
+.jumbotron1 {
+    background-color: rgb(177, 118, 16);
+    border-radius: 0.5rem;
+    margin-top: 0.5em;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.5rem;
+}
+
+.jumbotron2 {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-bottom: 2px;
+    border-radius: 0.8rem;
+}
+
+main>.container {
+    padding: 5px 15px 0;
+}
+
+table {
+    border: 1px solid rgb(7, 186, 61);
+    border-collapse: separate;
+    border-spacing: 5px;
+    background: rgb(91, 12, 12);
+    color: #fff;
+}
+
+td,
+th {
+    text-align: center;
+    font-size: 17px;
+    vertical-align: center;
+    border: 1px solid rgb(7, 186, 61);
+    padding: 0.3em;
+    color: rgb(255, 255, 255);
+}
+
+/** Navbar */
+.navbar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.mx-bg-top-linear {
+    background: -webkit-linear-gradient(45deg, #54d400 48%, #1b1e21 48%);
+    background: -webkit-linear-gradient(left, #54d400 48%, #1b1e21 48%);
+    background: linear-gradient(45deg, #b17610 48%, #1b1e21 48%);
+}
+
+/** Footer */
+.wcfooter {
+    color: rgba(255, 255, 255, 0.5);
+    background-color: #f5f5f5;
+}
+
+.wcfooter>.container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
