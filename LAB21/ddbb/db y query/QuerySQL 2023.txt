@@ -1,0 +1,22 @@
+*/--------------------------------------------------------------------------------------------------------------------/*
+CREAR TABLA DE PRODUCTOS EN BASE DE DATOS prodsmvc |
+----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `products` ( `cod` int(11) UNSIGNED NOT NULL COMMENT 'Para registro de codigos en productos.', `short_name` varchar(20) NOT NULL COMMENT 'Para almacenar el nombre del producto.', `pvp` decimal(5,2) NOT NULL COMMENT 'Para almacenar el valor del producto.', `nombre` varchar(100) NOT NULL COMMENT 'Para almacenar la descripcion del producto.', `fecha_reg` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Uso exclusivo para auditoria interna.' ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+CREATE TABLE IF NOT EXISTS `products` (
+    `cod` int(11) UNSIGNED NOT NULL COMMENT 'Para registro de codigos en productos.',
+    `short_name` varchar(20) NOT NULL COMMENT 'Para almacenar el nombre del producto.',
+    `pvp` decimal(5,2) NOT NULL COMMENT 'Para almacenar el valor del producto.',
+	`nombre` varchar(100) NOT NULL COMMENT 'Para almacenar la descripcion del producto.',
+    `fecha_reg` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Uso exclusivo para auditoria interna.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+*/--------------------------------------------------------------------------------------------------------------------/*
+INSERTAR DATOS EN LA TABLA DE PRODUCTS             |
+----------------------------------------------------
+INSERT INTO `products` (`cod`, `short_name`, `pvp`, `nombre`) VALUES (1, 'Monitor', '400.00', 'Dell 21 full HD'), (2, 'Teclado', '9.99', 'Teclado inalámbrico Logitech'), (3, 'iPad Pro', '900.00', 'Apple iPad Pro 9');
+
+INSERT INTO `products` (`cod`, `short_name`, `pvp`, `nombre`) VALUES
+(1, 'Monitor', '400.00', 'Dell 21 full HD'),
+(2, 'Teclado', '9.99', 'Teclado inalámbrico Logitech'),
+(3, 'iPad Pro', '900.00', 'Apple iPad Pro 9');
+*/--------------------------------------------------------------------------------------------------------------------/*
