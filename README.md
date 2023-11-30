@@ -19,5 +19,10 @@ ________________________________________________________________________________
 ### 10. LAB08 - Laboratorio #08 - POO en PHP [Parte 3].
 ### 11. LAB09 - Laboratorio #09 - Integración de PHP con base de datos [Parte 1].
 ### 12. LAB10 - Laboratorio #10 - Integración de PHP con base de datos [Parte 2].
+### 13. LAB11 - Laboratorio #11 - Integración de PHP con base de datos [Parte 3].
+### 14. LAB12 - Laboratorio #12 - Sesiones con PHP.
+### 15. LAB13 - Laboratorio #13 - Cookies con PHP.
+### 16. LAB14 - Laboratorio #14 - PHP y Control de acceso a usuarios [sesiones].
+### 17. LAB15 - Laboratorio #15 - Introduccion a JQuery + Integracion con PHP [DataTable].
 
 ------------------------------------------------------------------------------------
