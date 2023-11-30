@@ -1,0 +1,41 @@
+*/--------------------------------------------------------------------------------------------------------------------/*
+CREAR TABLA DE USUARIOS                            |
+----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `usuarios` ( `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Para incrementar el numero de registros de la cita.', `usuario` varchar(20) NOT NULL DEFAULT '' COMMENT 'Para almacenar el nombre del usuario.', `clave` varchar(20) NOT NULL DEFAULT '' COMMENT 'Para almacenar la contrasena de usuario.', `fecha_reg` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Uso exclusivo para auditoria interna.', PRIMARY KEY (id) ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+CREATE TABLE IF NOT EXISTS `usuarios` (
+    `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Para incrementar el numero de registros de la cita.',
+    `usuario` varchar(20) NOT NULL DEFAULT '' COMMENT 'Para almacenar el nombre del usuario.',
+    `clave` varchar(20) NOT NULL DEFAULT '' COMMENT 'Para almacenar la contrasena de usuario.',
+    `fecha_reg` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Uso exclusivo para auditoria interna.',
+    PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+*/--------------------------------------------------------------------------------------------------------------------/*
+INSERTAR DATOS EN LA TABLA DE USUARIOS             |
+----------------------------------------------------
+INSERT INTO `usuarios` (`id`, `usuario`, `clave`) VALUES (1, 'testuser', 'teXB5LK3JWG6g');
+*/--------------------------------------------------------------------------------------------------------------------/*
+CREAR PROCEDIMIENTO PARA CONSULTAR TABLA USUARIOS  |
+----------------------------------------------------
+CREATE DEFINER=`willcrackcorp`@`localhost` PROCEDURE `sp_validar_usuario`(IN param_user varchar(255), IN param_pass varchar(255)) BEGIN SET @s = CONCAT("SELECT count(*) FROM usuarios WHERE usuario='",param_user,"' AND clave='",param_pass,"'"); PREPARE stmt FROM @s; EXECUTE stmt; DEALLOCATE PREPARE stmt; END;
+
+CREATE DEFINER=`willcrackcorp`@`localhost` PROCEDURE `sp_validar_usuario`(IN param_user varchar(255), IN param_pass varchar(255)) 
+BEGIN
+	SET @s = CONCAT("SELECT count(*) FROM usuarios WHERE usuario='",param_user,"' AND clave='",param_pass,"'");
+    PREPARE stmt FROM @s;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;
+END;
+*/--------------------------------------------------------------------------------------------------------------------/*
+CREAR PROCEDIMIENTO PARA GRABAR EN TABLA USUARIOS  |
+----------------------------------------------------
+CREATE DEFINER=`willcrackcorp`@`localhost` PROCEDURE `sp_grabar_usuario`(IN param_usr VARCHAR(255), IN param_pwd_crypt VARCHAR(255)) BEGIN SET @s = CONCAT("INSERT INTO usuarios (`usuario`, `clave`) VALUES ('",param_usr,"','",param_pwd_crypt,"')"); PREPARE stmt FROM @s; EXECUTE stmt; DEALLOCATE PREPARE stmt; END;
+
+CREATE DEFINER=`willcrackcorp`@`localhost` PROCEDURE `sp_grabar_usuario`(IN param_usr VARCHAR(255), IN param_pwd_crypt VARCHAR(255))
+BEGIN
+	SET @s = CONCAT("INSERT INTO usuarios (`usuario`, `clave`) VALUES ('",param_usr,"','",param_pwd_crypt,"')");
+    PREPARE stmt FROM @s;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;
+END;
+*/--------------------------------------------------------------------------------------------------------------------/*
