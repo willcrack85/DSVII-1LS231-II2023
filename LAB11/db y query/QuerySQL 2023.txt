@@ -1,0 +1,13 @@
+*/--------------------------------------------------------------------------------------------------------------------/*
+CREAR PROCEDIMIENTO PARA PAGINACION TABLA NOTICIAS |
+----------------------------------------------------
+CREATE DEFINER=`willcrackcorp`@`localhost` PROCEDURE `sp_listar_noticia_paginada`(IN param_inicio VARCHAR(255), IN param_total VARCHAR(255)) BEGIN SET @S = CONCAT("SELECT titulo, texto, categoria, fecha, imagen FROM noticias LIMIT ",param_inicio,",",param_total); PREPARE stmt FROM @S; EXECUTE stmt; DEALLOCATE PREPARE stmt; END;
+
+CREATE DEFINER=`willcrackcorp`@`localhost` PROCEDURE `sp_listar_noticia_paginada`(IN param_inicio VARCHAR(255), IN param_total VARCHAR(255))
+BEGIN
+	SET @S = CONCAT("SELECT titulo, texto, categoria, fecha, imagen FROM noticias LIMIT ",param_inicio,",",param_total);
+    PREPARE stmt FROM @S;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;
+END;
+*/--------------------------------------------------------------------------------------------------------------------/*
