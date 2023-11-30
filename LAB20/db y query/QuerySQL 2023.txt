@@ -1,0 +1,64 @@
+*/--------------------------------------------------------------------------------------------------------------------/*
+CREAR TABLA DE PRODUCTOS_API EN DB categorias      |
+----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `categorias` ( `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Para registro incremental de categorias.', `nombre` varchar(256) NOT NULL COMMENT 'Para almacenar el nombre de la categoria.', `descripcion` text NOT NULL COMMENT 'Para almacenar la descripcion de la categoria.', `creado` datetime NOT NULL COMMENT 'Para almacenar cuando se crea la categoria.', `modificado` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Uso exclusivo para auditoria interna.', PRIMARY KEY (id) ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+CREATE TABLE IF NOT EXISTS `categorias` (
+    `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Para registro incremental de categorias.',
+    `nombre` varchar(256) NOT NULL COMMENT 'Para almacenar el nombre de la categoria.',
+    `descripcion` text NOT NULL COMMENT 'Para almacenar la descripcion de la categoria.',
+	`creado` datetime NOT NULL COMMENT 'Para almacenar cuando se crea la categoria.',
+    `modificado` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Uso exclusivo para auditoria interna.',
+	PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+*/--------------------------------------------------------------------------------------------------------------------/*
+INSERTAR DATOS EN LA TABLA DE categorias           |
+----------------------------------------------------
+INSERT INTO `categorias` (`id`, `nombre`, `descripcion`, `creado`, `modificado`) VALUES (1, 'Moda', ' Categoría para todo lo relacionado con la moda.', '2019-06-01 00:35:07', '2019-05-30 17:34:33'), (2, 'Electronicos', 'Gadgets, drones y más.', '2019-06-01 00:35:07', '2019-05-30 17:34:33'), (3, 'Motores', 'Deportes de motor y más', '2019-06-01 00:35:07', '2019-05-30 17:34:54'), (4, 'Peliculas', ' Productos de cine.', '0000-00-00 00:00:00', '2019-01-08 13:27:26'), (5, 'Libros', 'Libros Kindle, audiolibros y más.', '0000-00-00 00:00:00', '2019-01-08 13:27:47'), (6, 'Deportes', 'Ropa, calzados y articulos deportivos.', '2019-01-09 02:24:24', '2019-01-09 01:24:24');
+
+INSERT INTO `categorias` (`id`, `nombre`, `descripcion`, `creado`, `modificado`) VALUES
+(1, 'Moda', ' Categoría para todo lo relacionado con la moda.', '2019-06-01 00:35:07', '2019-05-30 17:34:33'),
+(2, 'Electronicos', 'Gadgets, drones y más.', '2019-06-01 00:35:07', '2019-05-30 17:34:33'),
+(3, 'Motores', 'Deportes de motor y más', '2019-06-01 00:35:07', '2019-05-30 17:34:54'),
+(4, 'Peliculas', ' Productos de cine.', '0000-00-00 00:00:00', '2019-01-08 13:27:26'),
+(5, 'Libros', 'Libros Kindle, audiolibros y más.', '0000-00-00 00:00:00', '2019-01-08 13:27:47'),
+(6, 'Deportes', 'Ropa, calzados y articulos deportivos.', '2019-01-09 02:24:24', '2019-01-09 01:24:24');
+*/--------------------------------------------------------------------------------------------------------------------/*
+CREAR TABLA DE PRODUCTOS_API EN DB productos       |
+----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `productos` ( `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Para registro incremental de productos.', `nombre` varchar(32) NOT NULL COMMENT 'Para almacenar el nombre de productos.', `descripcion` text NOT NULL COMMENT 'Para almacenar la descripcion de productos.', `precio` decimal(10,0) NOT NULL COMMENT 'Para almacenar los precios de productos.', `categoria_id` int(11) NOT NULL COMMENT 'Para almacenar el codigo de categorias en productos.', `creado` datetime NOT NULL COMMENT 'Para almacenar cuando se crea la categoria.', `modificado` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Uso exclusivo para auditoria interna.', PRIMARY KEY (id) ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+CREATE TABLE IF NOT EXISTS `productos` (
+    `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Para registro incremental de productos.',
+    `nombre` varchar(32) NOT NULL COMMENT 'Para almacenar el nombre de productos.',
+    `descripcion` text NOT NULL COMMENT 'Para almacenar la descripcion de productos.',
+	`precio` decimal(10,0) NOT NULL COMMENT 'Para almacenar los precios de productos.',
+	`categoria_id` int(11) NOT NULL COMMENT 'Para almacenar el codigo de categorias en  productos.',
+	`creado` datetime NOT NULL COMMENT 'Para almacenar cuando se crea la categoria.',
+    `modificado` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Uso exclusivo para auditoria interna.',
+	PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+*/--------------------------------------------------------------------------------------------------------------------/*
+INSERTAR DATOS EN LA TABLA DE productos            |
+----------------------------------------------------
+INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `precio`, `categoria_id`, `creado`, `modificado`) VALUES (1, 'Samsung Galaxy Note 10 Plus', ' El mejor celular Samsung en este momento y el más completo', '1110', 2, '2019-06-01 01:12:26', '2019-05-31 17:12:26'), (2, ' Huawei P30 Pro', ' Cámara que ofrece zoom óptico 5X', '719', 2, '2019-06-01 01:12:26', '2019-05-31 17:12:26'), (3, 'Samsung Galaxy S10', '¿Qué tal este smartphone?', '800', 3, '2019-06-01 01:12:26', '2019-05-31 17:12:26'), (4, 'Ropa para levantar Pesas', 'De tipo Bench Shirt', '29', 1, '2019-06-01 01:12:26', '2019-05-31 02:12:21'), (5, 'Laptop Lenovo', 'Mi socio comercial', '399', 2, '2019-06-01 01:13:45', '2019-05-31 02:13:39'), (6, 'Samsung Galaxy Tab 10.1', 'Buena Tableta', '259', 2, '2019-06-01 01:14:13', '2019-05-31 02:14:08'), (7, 'Reloj Spalding', 'Mi reloj deportivo', '199', 1, '2019-06-01 01:18:36', '2019-05-31 02:18:31'), (8, ' Smart Watch de Sony', '¡El reloj inteligente más genial!', '300', 2, '2[...]
+
+INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `precio`, `categoria_id`, `creado`, `modificado`) VALUES
+(1, 'Samsung Galaxy Note 10 Plus', ' El mejor celular Samsung en este momento y el más completo', '1110', 2, '2019-06-01 01:12:26', '2019-05-31 17:12:26'),
+(2, ' Huawei P30 Pro', ' Cámara que ofrece zoom óptico 5X', '719', 2, '2019-06-01 01:12:26', '2019-05-31 17:12:26'),
+(3, 'Samsung Galaxy S10', '¿Qué tal este smartphone?', '800', 3, '2019-06-01 01:12:26', '2019-05-31 17:12:26'),
+(4, 'Ropa para levantar Pesas', 'De tipo Bench Shirt', '29', 1, '2019-06-01 01:12:26', '2019-05-31 02:12:21'),
+(5, 'Laptop Lenovo', 'Mi socio comercial', '399', 2, '2019-06-01 01:13:45', '2019-05-31 02:13:39'),
+(6, 'Samsung Galaxy Tab 10.1', 'Buena Tableta', '259', 2, '2019-06-01 01:14:13', '2019-05-31 02:14:08'),
+(7, 'Reloj Spalding', 'Mi reloj deportivo', '199', 1, '2019-06-01 01:18:36', '2019-05-31 02:18:31'),
+(8, ' Smart Watch de Sony', '¡El reloj inteligente más genial!', '300', 2, '2019-06-06 17:10:01', '2019-06-05 18:09:51'),
+(9, 'Huawei Y9s', 'Para fines de prueba.', '350', 2, '2019-06-06 17:11:04', '2019-06-05 18:10:54'),
+(10, 'Camisa Abercrombie Lake Arnold', 'Perfecto como regalo!', '60', 1, '2019-06-06 17:12:21', '2019-06-05 18:12:11'),
+(11, 'Camisa Abercrombie Allen Brook', '¡Camisa roja genial!', '70', 1, '2019-06-06 17:12:59', '2019-06-05 18:12:49'),
+(12, 'Camara Canon EOS 6D', 'Excelente camara profesional', '1455', 2, '2019-11-22 19:07:34', '2019-11-21 20:07:34'),
+(13, 'Billetera', '¡Absolutamente puedes usar este!', '199', 6, '2019-12-04 21:12:03', '2019-12-03 22:12:03'),
+(14, 'Camisa de Amanda Waller', 'Nueva camisa impresionante!', '333', 1, '2019-12-13 00:52:54', '2019-12-12 01:52:54'),
+(15, 'Zapatillas Nike para hombre', 'Zapatillas Nike', '129', 3, '2019-12-12 06:47:08', '2019-12-12 05:47:08'),
+(16, 'Zapatos Bristol', 'Zapatos impresionantes', '199', 5, '2019-01-08 06:36:37', '2019-01-08 05:36:37'),
+(17, 'Reloj Rolex', 'Reloj de lujo.', '25000', 1, '2019-01-11 15:46:02', '2019-01-11 14:46:02');
+*/--------------------------------------------------------------------------------------------------------------------/*
