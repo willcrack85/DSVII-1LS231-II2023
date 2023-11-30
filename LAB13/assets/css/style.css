@@ -1,0 +1,201 @@
+/** Globals */
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+/** Links */
+h1 {
+    font-weight: bold;
+    color: rgba(0, 102, 204, 0.883);
+}
+
+h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    color: black;
+}
+
+h3 {
+    font-size: 10pt;
+    font-weight: bold;
+    color: black;
+}
+
+/** Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+    color: #333;
+    text-shadow: none;
+    background-color: #fff;
+    border: 0.05rem solid #fff;
+}
+
+/** Base structure */
+html,
+body {
+    font-family: Lato, sans-serif;
+    background: #333 url(../img/fondo.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+body {
+    padding-top: 3.5rem;
+    display: -ms-flexbox;
+    text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+
+.jumbotron {
+    Background-color: #efddbf;
+    border: 0.5rex solid white;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0rem;
+    padding: 1rem 1rem;
+}
+
+.jumbotron1 {
+    background-color: rgb(177, 118, 16);
+    border-radius: 0.5rem;
+    margin-top: 0.5em;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.5rem;
+}
+
+.jumbotron2 {
+    font-style: normal;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    background: url(../img/fondo.gif) center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/** Cover */
+.cover {
+    padding: 0 1.5rem;
+}
+
+.cover .btn-lg {
+    padding: 0.2rem 0.25rem;
+    font-weight: 700;
+}
+
+#wc-center::placeholder {
+    color: rgb(0, 17, 255);
+    text-align: center;
+    padding-top: 30px;
+}
+
+main>.container {
+    padding: 5px 15px 0;
+}
+
+table {
+    width: 100%;
+    border: 1px solid rgb(7, 186, 61);
+    border-collapse: separate;
+    border-spacing: 5px;
+    color: #fff;
+}
+
+th {
+    font-size: 15pt;
+    font-weight: bold;
+    color: white;
+    background: #0066cc;
+    text-align: center;
+    vertical-align: center;
+    border: 1px solid rgb(7, 186, 61);
+    padding: 0.3em;
+}
+
+td {
+    font-size: 12pt;
+    vertical-align: center;
+    border: 1px solid rgb(7, 186, 61);
+    padding: 0.3em;
+    color: rgb(16, 187, 19);
+}
+
+td.rigth {
+    font-size: 10pt;
+    text-align: right;
+    color: rgb(231, 235, 11);
+}
+
+td.left {
+    font-size: 10pt;
+    text-align: left;
+    color: rgb(231, 235, 11);
+}
+
+/** Navbar */
+.navbar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.mx-bg-top-linear {
+    background: -webkit-linear-gradient(45deg, #54d400 48%, #1b1e21 48%);
+    background: -webkit-linear-gradient(left, #54d400 48%, #1b1e21 48%);
+    background: linear-gradient(45deg, #b17610 48%, #1b1e21 48%);
+}
+
+/** Footer */
+.wcfooter {
+    color: rgb(255, 255, 255);
+    padding: 28px 0;
+    margin-top: 55px;
+}
+
+.wcfooter span,
+.wcfooter b,
+.wcfooter a {
+    color: #ffffff;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.wcfooter a:hover {
+    color: #007bff;
+}
+
+.back-to-top {
+    position: relative;
+    z-index: 2;
+}
+
+.back-to-top .btn-dark {
+    width: 50px;
+    height: 50px;
+    border-radius: 60%;
+    padding: 0;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: #b17610;
+    border-color: #e70a0aa8;
+    display: none;
+    z-index: 999;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.back-to-top .btn-dark:hover {
+    cursor: pointer;
+    background: #fa6742;
+    border-color: #fa6742;
+}
