@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+    lang="es"
+    xmlns="http://www.w3.org/1999/xhtml"
+>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="description"
+            content="Template con PHP en Laboratorio #74"
+        />
+        <meta
+            name="keywords"
+            content="HTML5, CSS, Javascript"
+        />
+        <meta
+            name="author"
+            content="WillCrack Solution Corp."
+        />
+        <meta
+            name="generator"
+            content="WC 0.0.0"
+        />
+        <title>Ejemplo sencillo de AJAX</title>
+        <!-- Icono de la página WEB -->
+        <link
+            rel="shortcut icon"
+            type="image/x-ico"
+            href="assets/ico/favicon.ico"
+        />
+        <!-- ESTILO Bootstrap core CSS -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="assets/bootstrap4/css/bootstrap.min.css"
+        />
+        <!-- ESTILO Custom PARA LA PAGINA WEB -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="assets/css/cover.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="assets/css/estilo.css"
+        />
+
+        <style>
+            #divTest1 {
+                color: white;
+                font-size: 1.1rem;
+                width: auto;
+            }
+        </style>
+
+        <script
+            type="text/javascript"
+            src="assets/js/jquery-3.1.1.js"
+        ></script>
+
+        <script>
+            function realizaProceso(valorCaja1, valorCaja2) {
+                var parametros = {
+                    valorCaja1: valorCaja1,
+                    valorCaja2: valorCaja2,
+                };
+                $.ajax({
+                    data: parametros,
+                    url: 'lab192.php',
+                    type: 'post',
+                    beforeSend: function () {
+                        $('#resultado').html('procesando, espere por favor...');
+                    },
+                    success: function (response) {
+                        $('#resultado').html(response);
+                    },
+                });
+            }
+        </script>
+    </head>
+    <body class="text-center">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <header class="masthead mb-auto">
+                <div class="inner">
+                    <h3 class="masthead-brand">Dev Software VII - 2023</h3>
+                    <nav class="nav nav-masthead justify-content-center">
+                        <a
+                            class="nav-link active"
+                            href="#"
+                            >Inicio</a
+                        >
+                        <a
+                            class="nav-link"
+                            href="#"
+                            >Nosotros</a
+                        >
+                        <a
+                            class="nav-link"
+                            href="#"
+                            >Conctactos</a
+                        >
+                    </nav>
+                </div>
+            </header>
+            <main
+                role="main"
+                class="inner cover"
+            >
+                <h1 class="cover-heading mb-5">DS7 - Laboratorio 19.2</h1>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-8">
+                            Introduce valor 1
+                            <input
+                                type="number"
+                                name="caja_texto"
+                                id="valor1"
+                                value="0"
+                                title="Introduce valor 1"
+                                placeholder="Introduce valor 1"
+                            />
+                            Introduce valor 2
+                            <input
+                                type="number"
+                                name="caja_texto"
+                                id="valor2"
+                                value="0"
+                                title="Introduce valor 2"
+                                placeholder="Introduce valor 2"
+                            />
+                            Realiza suma
+                            <input
+                                type="button"
+                                onclick="realizaProceso($('#valor1').val(), $('#valor2').val()); return false;"
+                                value="Calcular"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-6">
+                            <div
+                                id="divTest1"
+                                class="badge-primary text-wrap align-items-center"
+                            >
+                                Resultado: <span id="resultado">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Resultado: <span id="resultado">0</span> -->
+            </main>
+            <footer class="mastfoot mt-auto py-3">
+                <div class="container text-center">
+                    <span class="text-muted">
+                        <b
+                            >Dise&ntilde;ado por
+                            <a
+                                rel="noopener"
+                                href="https://willcrackcorp.w3spaces.com/"
+                                title="WillCrack Solutions Corp., Panam&aacute;"
+                                target="_blank"
+                                >WC Solutions Corp.</a
+                            >
+                            Copyright &copy; DS 7 - 2023 | William Miranda</b
+                        >
+                    </span>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

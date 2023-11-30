@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+    lang="es"
+    xmlns="http://www.w3.org/1999/xhtml"
+>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="description"
+            content="Template con PHP en Laboratorio #74"
+        />
+        <meta
+            name="keywords"
+            content="HTML5, CSS, Javascript"
+        />
+        <meta
+            name="author"
+            content="WillCrack Solution Corp."
+        />
+        <meta
+            name="generator"
+            content="WC 0.0.0"
+        />
+        <title>Laboratorio 19.1</title>
+        <!-- Icono de la página WEB -->
+        <link
+            rel="shortcut icon"
+            type="image/x-ico"
+            href="assets/ico/favicon.ico"
+        />
+        <!-- ESTILO Bootstrap core CSS -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="assets/bootstrap4/css/bootstrap.min.css"
+        />
+        <!-- ESTILO Custom PARA LA PAGINA WEB -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="assets/css/cover.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="assets/css/estilo.css"
+        />
+    </head>
+    <body class="text-center">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <header class="masthead mb-auto">
+                <div class="inner">
+                    <h3 class="masthead-brand">Dev Software VII - 2023</h3>
+                    <nav class="nav nav-masthead justify-content-center">
+                        <a
+                            class="nav-link active"
+                            href="#"
+                            >Inicio</a
+                        >
+                        <a
+                            class="nav-link"
+                            href="#"
+                            >Nosotros</a
+                        >
+                        <a
+                            class="nav-link"
+                            href="#"
+                            >Conctactos</a
+                        >
+                    </nav>
+                </div>
+            </header>
+            <main
+                role="main"
+                class="inner cover"
+            >
+                <h1 class="cover-heading mb-5">DS7 - Laboratorio 19.1</h1>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-6-large">
+                            <div
+                                id="drop_file_zone"
+                                ondrop="upload_file(event)"
+                                ondragover="return false"
+                            >
+                                <div
+                                    id="drag_upload_file"
+                                    class="align-items-center mt-4"
+                                >
+                                    <p class="lead">Arrastre el archivo aquí</p>
+                                    <p class="lead mb-4">o</p>
+
+                                    <p class="lead text-center my-3">
+                                        <input
+                                            type="button"
+                                            class="btn btn-secondary btn-lg"
+                                            for="selectfile"
+                                            value="Seleccione Archivo"
+                                            onclick="file_explorer();"
+                                        />
+                                        <input
+                                            type="file"
+                                            id="selectfile"
+                                            title="Select File"
+                                            placeholder="Select File"
+                                        />
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center m-5">
+                        <div class="col-6-large">
+                            <div class="img-content m-0"></div>
+                        </div>
+                    </div>
+                </div>
+                <script
+                    type="text/javascript"
+                    src="assets/js/funciones_ajax.js"
+                ></script>
+            </main>
+            <footer class="mastfoot mt-auto py-3">
+                <div class="container text-center">
+                    <span class="text-muted">
+                        <b
+                            >Dise&ntilde;ado por
+                            <a
+                                rel="noopener"
+                                href="https://willcrackcorp.w3spaces.com/"
+                                title="WillCrack Solutions Corp., Panam&aacute;"
+                                target="_blank"
+                                >WC Solutions Corp.</a
+                            >
+                            Copyright &copy; DS 7 - 2023 | William Miranda</b
+                        >
+                    </span>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
